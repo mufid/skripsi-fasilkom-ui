@@ -3,30 +3,35 @@ layout: base
 ---
 <html>
 <head>
-<title>Daftar Skripsi Fasilkom UI</title>
-<link rel="stylesheet" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
+  <title>Daftar Skripsi Fasilkom UI</title>
+  <link rel="stylesheet" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
+  <style>
+    .hide-while-loading { display: none }
+  </style>
 </head>
 <body>
   <h1>Daftar Skripsi Fasilkom UI</h1>
   <a href="http://github.com/mufid/lontarcs-parser">Repo utama</a>
-  <table>
-  <thead>
-    <th>Author</th>
-    <th>Year</th>
-    <th>Title</th>
-    <th>Call Number &amp; Link</th>
-  </thead>
-  <tbody>
-    {% for thesis in site.data.skripsi %}
-      <tr>
-        <td> {{ thesis.author}} </td>
-	<td> {{ thesis.year}} </td>
-	<td> {{ thesis.title}} </td>
-	<td> <a href="http://lontar.cs.ui.ac.id/Lontar/opac/themes/newui/{{thesis.link}}"> {{ thesis.call_number }} </a> </td>
-      </tr>
-    {% endfor %}
-  </tbody>
-  </table>
+  <div class=hide-while-loading>
+    <table>
+    <thead>
+      <th>Author</th>
+      <th>Year</th>
+      <th>Title</th>
+      <th>Call Number &amp; Link</th>
+    </thead>
+    <tbody>
+      {% for thesis in site.data.skripsi %}
+        <tr>
+          <td> {{ thesis.author}} </td>
+      	  <td> {{ thesis.year}} </td>
+        	<td> {{ thesis.title}} </td>
+          <td> <a href="http://lontar.cs.ui.ac.id/Lontar/opac/themes/newui/{{thesis.link}}"> {{ thesis.call_number }} </a> </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+    </table>
+  </div>
 
   {% include _scripts.html %}
 </body>
