@@ -6,13 +6,15 @@ layout: base
   <title>Daftar Skripsi Fasilkom UI</title>
   <link rel="stylesheet" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
   <style>
-    .hide-while-loading { display: none }
+    .hide-while-loading { display: none; }
+    .hidden { display: none; }
+    .loading { color: white; background: red; padding: 15px; }
   </style>
 </head>
 <body>
   <h1>Daftar Skripsi Fasilkom UI</h1>
   <a href="http://github.com/mufid/lontarcs-parser">Repo utama</a>
-  <div class=show-while-loading>
+  <div class="show-while-loading loading">
     Memuat...
   </div>
   <div class=hide-while-loading>
